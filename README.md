@@ -6,13 +6,13 @@ Absolutely! Here's a polished version of your Pi Network Node setup and troubles
 ---
 
 ```markdown
-# 🧩 Pi Network Node Setup on macOS (Monterey & High Sierra)
+# Pi Network Node Setup on macOS (Monterey & High Sierra)
 
 This write-up documents how I set up and troubleshot a Pi Network Node using Docker on two Macs: a **MacBook Pro (Monterey)** and an older **iMac (High Sierra)**. It covers everything from port forwarding and firewall configuration to debugging Docker container behavior.
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - Docker (latest compatible version for your OS)
 - Access to your router for port forwarding
@@ -21,7 +21,7 @@ This write-up documents how I set up and troubleshot a Pi Network Node using Doc
 
 ---
 
-## 🔧 Step-by-Step Setup
+## Step-by-Step Setup
 
 ### 1. Install Docker
 
@@ -82,7 +82,7 @@ sudo pfctl -e
 
 ### 5. Run the Pi Node Container
 
-#### ✅ Working Command (with explicit environment variable):
+#### Working Command (with explicit environment variable):
 ```sh
 docker run -p 31400-31409:31400-31409 \
   -e PORTS="31400,31401,31402,31403,31404,31405,31406,31407,31408,31409" \
@@ -117,7 +117,7 @@ docker compose up -d
 
 ---
 
-## 🧪 Debugging & Troubleshooting
+## Debugging & Troubleshooting
 
 ### Check if container is running:
 ```sh
@@ -160,7 +160,7 @@ Use [yougetsignal.com/tools/open-ports](https://yougetsignal.com/tools/open-port
 
 ---
 
-## ✅ Final Check
+## Final Check
 
 You should see:
 
@@ -170,7 +170,7 @@ You should see:
 
 ---
 
-## 🔒 Optional Security (pf rules)
+## Optional Security (pf rules)
 
 To restrict access to specific IPs:
 ```pf
@@ -185,7 +185,7 @@ sudo pfctl -f /etc/pf.conf
 
 ---
 
-## 🧠 Lessons Learned
+## Lessons Learned
 
 - Docker on older macOS versions can behave differently—expect quirks.
 - Explicitly declaring ports and env vars helps a lot.
@@ -194,7 +194,7 @@ sudo pfctl -f /etc/pf.conf
 
 ---
 
-## 🙌 Credits
+## Credits
 
 Thanks to the Pi Network community and open source tools like Docker & pf for making this possible!
 
